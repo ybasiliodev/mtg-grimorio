@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 class mtgService {
 
     public function getCardsSetsData() {
-        $data = Http::accept('application/json')->get('https://api.magicthegathering.io/v1/sets')->json();
-        return !empty($data) ? $data['sets'] : [];
+        $data = Http::accept('application/json')->get('https://api.scryfall.com/sets')->json();
+        return !empty($data) ? $data['data'] : [];
     }
 
     public function getCardsBySetCode(String $code) {

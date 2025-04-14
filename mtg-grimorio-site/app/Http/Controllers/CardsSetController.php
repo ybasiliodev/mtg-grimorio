@@ -13,7 +13,7 @@ class CardsSetController extends Controller
     {
         $service = new mtgService();
         $data = $service->getCardsSetsData();
-        $newData = array_slice($data, 100);
+        $newData = array_slice($data, 0, 100);
         return Inertia::render('CardsSet/Index', [
             'data' => $newData
         ]);
